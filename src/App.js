@@ -21,12 +21,9 @@ class App extends Component {
 
     this.state = { sessions: [] }
 
-    window.fetch("./sessions.json").then((response) => {
-        response.json().then((json) => {
-          this.setState({ sessions: json })
-          console.log(this.state.sessions[0])
-        })
-    })
+    fetch("./sessions.json")
+      .then(response => response.json())
+      .then(sessions => this.setState({sessions}))
   }
 
   render() {
