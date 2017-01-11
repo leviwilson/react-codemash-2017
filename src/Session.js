@@ -26,7 +26,8 @@ class Session extends Component {
 
 Session.propTypes = {
   title: React.PropTypes.string.isRequired,
-  abstract: React.PropTypes.string.isRequired
+  abstract: React.PropTypes.string.isRequired,
+  speakers: React.PropTypes.array.isRequired
 }
 
 export default Session;
