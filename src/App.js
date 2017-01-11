@@ -21,7 +21,7 @@ class App extends Component {
 
     this.state = { sessions: [] }
 
-    window.fetch("https://speakers.codemash.org/api/sessionsdata?type=json").then((response) => {
+    window.fetch("./sessions.json").then((response) => {
         response.json().then((json) => {
           this.setState({ sessions: json })
           console.log(this.state.sessions[0])
