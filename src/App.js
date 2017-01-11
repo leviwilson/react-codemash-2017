@@ -3,6 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 import Session from './Session'
 
+const session = {
+  title: "React Everywhere",
+  abstract: "blah",
+  speakers: [{
+    firstName: "Len"
+  }]
+}
+
 class App extends Component {
   render() {
     return (
@@ -11,12 +19,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <Session
-          title="7 Languages"
-          abstract="YAY" />
-        <Session
-          title="React everywhere"
-          abstract="Yarn is slow" />
+        <Session {...session} />
       </div>
     );
   }
