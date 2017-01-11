@@ -4,7 +4,8 @@ class Speaker extends Component {
   render() {
     return (
       <div>
-        <div>{this.props.FirstName}</div>
+        <img alt="Photo of {this.props.FirstName}" src={this.props.GravatarUrl} />
+        <div>{this.props.FirstName} {this.props.LastName}</div>
       </div>
     )
   }
