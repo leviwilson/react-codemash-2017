@@ -9,13 +9,11 @@ class SessionList extends Component {
 
     return (
       <div>
-        { sessions.map(s => <Session key={s.id} { ...s} />) }
+        { sessions.map(s => <Session key={s.Id} { ...s} />) }
       </div>
     )
   }
 }
-
-const sessions = [{id: 1, title: "React", abstract: "These are words", speakers: [{firstName: "Len"}]}]
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +24,6 @@ class App extends Component {
     window.fetch("https://speakers.codemash.org/api/sessionsdata?type=json").then((response) => {
         response.json().then((json) => {
           this.setState({ sessions: json })
-          console.log(this.state)
         })
     })
   }
@@ -39,7 +36,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
 
-        <SessionList sessions={sessions} />
+        <SessionList sessions={this.state.sessions} />
       </div>
     );
   }
