@@ -11,13 +11,27 @@ class Speaker extends Component {
 }
 
 class Session extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      showDetails: false
+    }
+  }
+
+  toggleDetails(e) {
+    e.preventDefault()
+
+    this.setState({
+      showDetails: !this.state.showDetails
+    })
+  }
+
   render() {
     const { title, abstract, speakers } = this.props
     return (
-      <div>
+      <div className="session" onClick={this.toggleDetails.bind(this)}>
         <div>{title}</div>
-        <div>{abstract}</div>
-
+        { this.state.showDetails && <div>{abstract}</div> }
         <Speaker {...speakers[0]} />
       </div>
     )
